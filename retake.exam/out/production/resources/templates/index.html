@@ -8,18 +8,18 @@
 
 <h1>Green Fox Fashion Web Store</h1>
 
-<select  th:action="@{/warehouse}" th:object="${product}"  method="get" id="selectName" name="selectName" >
+<select  th:action="@{/warehouse}" th:object="${product}"  method="get" id="name" name="name" >
     <option value="">Select Item Name</option>
     <option th:each="product : ${products}"
             th:text="${product.name}"></option>
 </select> |
 
-<!--<select th:action="@{/warehouse}" th:object="${product}" th:method="get" id="size" name="size">-->
-    <!--<option value="">Select Item Size</option>-->
-    <!--<option th:each="product : ${products}"-->
-            <!--th:value="${product.size}"-->
-            <!--th:text="${product.size}"></option>-->
-<!--</select>-->
+<select th:action="@{/warehouse}" th:object="${product}" th:method="get" id="size" name="size">
+    <option value="">Select Item Size</option>
+    <option th:each="product : ${products}"
+            th:value="${product.size}"
+            th:text="${product.size}"></option>
+</select>
 
 <table>
     <tr>
