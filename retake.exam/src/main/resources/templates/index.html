@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+<h1>Car List</h1>
+
+
+<table>
+    <tr>
+        <th >Plate</th>
+        <th >Brand</th>
+        <th >Model</th>
+        <th >Color</th>
+        <th >Year</th>
+    </tr>
+    <tr th:each="car : ${cars}" >
+        <td th:text="${car.plate}"></td>
+        <td ><a th:text="${car.brand}" th:method="get" th:href="@{'/search/{brand}'(brand=${car.brand})}"></a></td>
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.color}"></td>
+        <td th:text="${car.year}"></td>
+        <td><a th:href="@{'/{plate}/delete'(plate=${car.plate})}" th:method="get">
+            <button type="reset" id="submit">delete</button></a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
