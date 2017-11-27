@@ -8,7 +8,12 @@
 
 <h1>Green Fox Fashion Web Store</h1>
 
-
+<select  id="testOrder" name="testOrder">
+    <option value="">Select item Name</option>
+    <option th:each="product : ${products}"
+            th:value="${product.name}"
+            th:text="${product.name}"></option>
+</select>
 <table>
     <tr>
         <th>Id</th>
