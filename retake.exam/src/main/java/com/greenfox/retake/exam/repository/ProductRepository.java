@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ProductRepository extends CrudRepository<Product, Integer> {
-    List<Product> findByNameContains(String name);
-    List<Product> findBySizeContains(String size);
+    List<Product> findDistinctByNameContains(String name);
+    List<Product> findDistinctBySizeContains(String size);
 }
