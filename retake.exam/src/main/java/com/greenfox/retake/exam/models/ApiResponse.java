@@ -12,7 +12,7 @@ public class ApiResponse {
 
     public ApiResponse(String status,List<Product> productList) {
         this.productList = productList;
-        this.status = status;
+        this.status = "ok";
     }
 
     public List<Product> getProductList() {

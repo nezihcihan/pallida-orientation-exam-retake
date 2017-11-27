@@ -18,8 +18,8 @@ public class MainController {
     ProductRepository productRepository;
 
     @GetMapping("/warehouse")
-    public String list(@RequestParam String name,
-                       @RequestParam String size,
+    public String list(@RequestParam(required = false) String name,
+                       @RequestParam(required = false) String size,
                        Model model) {
         if(name != null) {
             model.addAttribute("products", productRepository.findDistinctByName(name));
@@ -32,5 +32,12 @@ public class MainController {
         }
         return "index";
     }
+
+//    @PostMapping("warehouse/summary")
+//    public String selectItems() {
+//
+//        return "summary";
+//    }
+
 
 }
